@@ -10,6 +10,6 @@ export default function handler(req, res) {
       hash,
     });
   } catch (err) {
-    res.status(405).end();
+    res.status(405).end(err);
   }
 }
