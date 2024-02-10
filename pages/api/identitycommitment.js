@@ -5,7 +5,8 @@ const ethers = require("ethers");
 export default function handler(req, res) {
   try {
     const { wallet } = req.query;
-    const hash = ethers.sha256(new Uint8Array([wallet, process.env.KEY]));
+    const K_wall = ethers.toUtf8Bytes(wallet + process.env.KEY);
+    const hash = ethers.sha256(K_wall);
     res.status(200).json({
       hash,
     });
