@@ -84,6 +84,25 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "candidateName",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "name": "checkRegistered",
       "outputs": [
@@ -119,13 +138,40 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "proposalId",
+          "name": "",
           "type": "uint256"
-        },
+        }
+      ],
+      "name": "identityCommitments",
+      "outputs": [
         {
           "internalType": "uint256",
-          "name": "identityCommitment",
+          "name": "",
           "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "identityList",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "identityCommitments",
+          "type": "uint256[]"
         }
       ],
       "name": "joinProposal",
@@ -152,6 +198,11 @@
           "internalType": "address",
           "name": "member_address",
           "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time_joined",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -378,11 +429,29 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "ver",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256",
           "name": "proposalId",
           "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
         },
         {
           "internalType": "uint256",
