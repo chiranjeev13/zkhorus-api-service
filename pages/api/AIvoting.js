@@ -2,7 +2,7 @@ const ethers = require("ethers");
 const abii = require("../abi.json");
 
 const provider = new ethers.JsonRpcProvider(
-  "https://scroll-testnet-public.unifra.io"
+  "https://polygon-mumbai-bor-rpc.publicnode.com"
 );
 
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY);
