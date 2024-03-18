@@ -9,10 +9,11 @@ const wallet = new ethers.Wallet(process.env.PRIVATE_KEY);
 const abi = abii.abi;
 const signer = wallet.connect(provider);
 
-async function tx(contract, proposalId, vote, fullProof, groupId) {
+async function tx(contract, name, proposalId, vote, fullProof, groupId) {
   const contractInstance = new ethers.Contract(contract, abi, signer);
   const txs = await contractInstance.voteOnproposal(
     proposalId,
+    name,
     vote,
     fullProof.merkleTreeRoot,
     fullProof.nullifierHash,
@@ -31,8 +32,9 @@ export default function handler(req, res) {
     const { vote } = req.query;
     const { groupId } = req.query;
     const { contract } = req.query;
+    const { name } = req.query;
 
-    const resp = tx(contract, proposalId, vote, fullProof, groupId);
+    const resp = tx(contract, name, proposalId, vote, fullProof, groupId);
 
     res.status(200).json({
       resp,
